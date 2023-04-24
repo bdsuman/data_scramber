@@ -67,8 +67,8 @@ if('key'==$type){
     $_SESSION['result'] = '';
 }
 if (isset($_POST['submit'])) {
-    $key = $_POST['key'];
-    $message = $_POST['message'];
+    $key = htmlspecialchars($_POST['key']);
+    $message = htmlspecialchars($_POST['message']);
     if (!empty($key) && !empty($message)) {
         $_SESSION['msg'] = $message;
         if('encode'==$type){
